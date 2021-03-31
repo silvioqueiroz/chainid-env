@@ -1,0 +1,17 @@
+version: 3.4
+services:
+  app: 
+    image: yuri/web
+    container_name: app
+    ports: 
+      - 8080:80
+    depends:
+      - db
+  db: 
+    image: mysql
+    container_name: db
+    environment: 
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=loja
+      
